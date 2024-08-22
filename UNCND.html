@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./JS/color-modes.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .😑{
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="./CSS/carousel.css" rel="stylesheet">
+    <link href="./CSS/heroes.css" rel="stylesheet">
+
+  </head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Country', 'Tooltip'],
+          ['Algeria', 'People\'s Democratic Republic of Algeria - Shagun Sharma'],
+          ['Argentina', 'Argentine Republic - Bendi Manshuk Reddy'],
+          ['Armenia', 'Republic of Armenia - Dhruvi Ganeriwal'],
+          ['Austria', 'Republic of Austria - Aditi Pradhan'],
+          ['Bangladesh', 'People\'s Republic of Bangladesh - Nilesh Kumar Tripathy'],
+          ['Belgium', 'Kingdom of Belgium - Ishaan Chilamkurthy'],
+          ['Bolivia', 'Plurinational State of Bolivia - Sahasra Geethika Thota'],
+          ['Brazil', 'Federative Republic of Brazil - Snigdha Somnath Fulari'],
+          ['Burundi', 'Republic of Burundi - Kusuma Devi'],
+          ['Chile', 'Republic of Chile - Meghana Matcha'],
+          ['China', 'People\'s Republic of China - Amrutha Komanduri'],
+          ['Colombia', 'Republic of Colombia - Ishaan Nayudu'],
+          ['Côte d\'Ivoire', 'Republic of Côte d\'Ivoire - Samriddhi Sharma'],
+          ['Dominican Republic', 'Dominican Republic - Aatreya Dey'],
+          ['France', 'French Republic - Akshita Nagasai Sureddy'],
+          ['Finland', 'Republic of Finland - Nithyasree Vutukuru'],
+          ['Ghana', 'Republic of Ghana - K Vibhav'],
+          ['Guatemala', 'Republic of Guatemala - Tanishka Dubba'],
+          ['India', 'Republic of India - Aakriti'],
+          ['Indonesia', 'Republic of Indonesia - Sarvajeet Karnam'],
+          ['Iran', 'Islamic Republic of Iran - Avani Kanchan'],
+          ['Italy', 'Republic of Italy - Muntasir Rahaman'],
+          ['Japan', 'Japan - Surekha Ravindra'],
+          ['Kenya', 'Republic of Kenya - Soha Mahvish'],
+          ['Lithuania', 'Republic of Lithuania - Chintana Pranavi'],
+          ['Malta', 'Republic of Malta - Thaman Reddy N'],
+          ['Mexico', 'United Mexican States - Avishi Reddy Palle'],
+          ['Morocco', 'Kingdom of Morocco - Soham Tumuluri'],
+          ['Netherlands', 'Kingdom of Netherlands - Amulya Kriti Boddapati'],
+          ['Nigeria', 'Federal Republic of Nigeria - A.S. Mukund'],
+          ['Peru', 'Republic of Peru - Janya Subhash'],
+          ['Poland', 'Republic of Poland - Amrutha Kovuru'],
+          ['Portugal', 'Portuguese Republic - Ashirya M'],
+          ['Qatar', 'State of Qatar - Mohammed Waleed'],
+          ['Korea', 'Republic of Korea - K.P. Reya'],
+          ['Russia', 'Russian Federation - Hasini Bandaru'],
+          ['Saudi Arabia', 'Kingdom of Saudi Arabia - Aishani Majumdar'],
+          ['Singapore', 'Republic of Singapore - Vasireddy Samiha'],
+          ['Slovenia', 'Republic of Slovenia - Adrita Kumar'],
+          ['South Africa', 'Republic of South Africa - Ritwik Swain'],
+          ['Spain', 'Kingdom of Spain - Janaya Dhanhamsan Pillai'],
+          ['Thailand', 'Kingdom of Thailand - Rijul Saxena'],
+          ['Trinidad and Tobago', 'Republic of Trinidad and Tobago - Aryan Gundoju'],
+          ['Tunisia', 'Republic of Tunisia - Neev Agasthya'],
+          ['GB', 'United Kingdom of Great Britain and Northern Ireland - Shravya Jonnalagedda'],
+          ['Tanzania', 'United Republic of Tanzania - Sritha Meghana J'],
+          ['US', 'United States of America - Sri Diya Gorantla'],
+          ['Uruguay', 'Eastern Republic of Uruguay - Manasvi Puppala'],
+          ['Zimbabwe', 'Republic of Zimbabwe - Amrith Peddaraju'],
+          ['Switzerland', 'Swiss Confederation - Ethan Chauhan']
+        ]);
+
+        var options = {
+        defaultColor: '#B54646',
+        backgroundColor: '#212529',
+        legend: 'none',
+        height: 600,
+        width: 1000, 
+        datalessRegionColor: '#D0BEA8',
+        };
+
+        
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <img class="logo" src="./Images/logo.png"
+            width="50"
+            Height="45"/>
+          <a class="navbar-brand">DPSHMUN 2024</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Secretariat.html">Secretariat</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Committees</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./AIPPM.html">AIPPM</a></li>
+                  <li><a class="dropdown-item" href="./ECOFIN.html">ECOFIN</a></li>
+                  <li><a class="dropdown-item" href="./FCCC.html">FCCC</a></li>
+                  <li><a class="dropdown-item" href="./IP.html">IP</a></li>
+                  <li><a class="dropdown-item" href="./IPL.html">IPL</a></li>
+                  <li><a class="dropdown-item" href="./Legal.html">Legal</a></li>
+                  <li><a class="dropdown-item" href="./UNCND.html">UNCND</a></li>
+                  <li><a class="dropdown-item" href="./UNHRC.html">UNHRC</a></li>
+                  <li><a class="dropdown-item" href="./UNSC.html">UNSC</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./resources.html">Resources and Schedule</a>
+              </li>
+            </ul>
+            <div class="dropdown dropstart">
+            <button class="btn btn-outline-success dropdown-toggle dropdown-menu-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Search
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" >
+              <div class="input-group mb-3 rounded-0">
+                <input type="text" id="searchbox" class="form-control rounded-0" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+              <div id="options">
+                <li class="dropdown-item"><a href="./index.html" class="😑">Home</a></li>
+                <li class="dropdown-item"><a href="./Secretariat.html" class="😑">Secretariat</a></li>
+                <li class="dropdown-item"><a href="./AIPPM.html" class="😑">AIPPM</a></li>
+                <li class="dropdown-item"><a href="./ECOFIN.html" class="😑">ECOFIN</a></li>
+                <li class="dropdown-item"><a href="./FCCC.html" class="😑">FCCC</a></li>
+                <li class="dropdown-item"><a href="./IP.html" class="😑">IP</a></li>
+                <li class="dropdown-item"><a href="./IPL.html" class="😑">IPL</a></li>
+                <li class="dropdown-item"><a href="./Legal.html" class="😑">Legal</a></li>
+                <li class="dropdown-item"><a href="./UNCND.html" class="😑">UNCND</a></li>
+                <li class="dropdown-item"><a href="./UNHRC.html" class="😑">UNHRC</a></li>
+                <li class="dropdown-item"><a href="./UNSC.html" class="😑">UNSC</a></li>
+                <li class="dropdown-item"><a href="./resources.html" class="😑">Resources and Schedule</a></li>
+              </div>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <img class="d-block mx-auto mb-4" src="./Images/6.png" alt="" width=100% height=width*3>
+
+    <div class="b-example-divider"></div>
+
+    <div class="container marketing">
+
+      <div class="row featurette">
+        <div class="container col-xxl-15 px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img src="./Images/7l.png" class="d-block mx-lg-auto img-fluid" width=60% height=width loading="lazy">
+            </div>
+            <div class="col-lg-6 ">
+              <h1 class="display-5 fw-bold text-body-emphasis mb-5">UNCND</h1>
+              <p class="lead"> UNCND is one of the functional commissions of the Economic and Social Council of the UN, and is the central narcotic drug policy-making body within the UN System. The commission supervises the international efforts to control the use and movement of narcotics and psychotropic substances while assisting the ECOSOC in overseeing the implementation of international drug control treaties.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+      <h1 class="text-body-emphasis">Agenda</h1>
+      <p class="lead">
+        Assessment of the world drug problem with a particular focus on the supply reduction of emerging drug threats.
+      </p>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold text-white">Background Guides</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="fs-5 mb-4">A Background Guide is an introductory document curated by the Executive Board. It briefs about matters related to the committee and its agenda. You can find all the Background Guides by using the button below.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="./resources.html#bgguide"><button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Background Guides</button></a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="b-example-divider"></div>
+    
+    <br><br><br>
+
+    <h1 align="center">Allocations</h1>
+    <br><br><br>
+
+    <div id="regions_div" style="width: 1500px; height: 700px;" align="center"></div>
+
+    <div class="b-example-divider"></div>
+
+    <main>
+      <br><br><br>
+      <h1 align="center">Meet the Executive Board!</h1>
+      <br><br>
+      <!-- EB show -->
+      <div class="container marketing">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Kabeer Bajaj</h2>
+            <p class="lead">Co-Chairperson</p>
+            <br>
+            <p class="lead">
+              Kabeer, one of our very own, is incredibly excited to utilize his knowledge to provide the delegates with invaluable experience. After serving as the chairperson for DISEC in the 2023 edition of DPSHMUN, Kabeer is back to serve as the co-chairperson of UNCND. "I was inspired and mentored by my seniors and friends to take up the role of understanding better than ever before, and I plan to do the same." He looks forward to making this a delightful conference for all.
+              His webpage can be found here: <a href="https://sjlepyneedscoffee.github.io/me/">https://sjlepyneedscoffee.github.io/me/</a>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <img src="./Images/Kabeer Bajaj.jpg" width="200%" height="width">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Tejas Rama</h2>
+            <p class="lead">Co-Chairperson</p>
+            <br>
+            <p class="lead">
+              Tejas is a rising sophomore majoring in business at Boston University with interests in strategy and entrepreneurship. In the past year, he has engaged in the Boston startup ecosystem, joined as a data analyst for BU's D1 Soccer Team, and as an associate consultant in the campus consulting club. Tejas aims to foster a welcoming committee environment for public speaking and is excited to be back on campus to co-chair UNCND. In his free time, he enjoys studying football metrics, music by The 1975, Noah Kahan, and Zach Bryan, and re-watching The Office.
+              LinkedIn: <a href="https://www.linkedin.com/in/tejasrama/">https://www.linkedin.com/in/tejasrama/</a>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <img src="./Images/Tejas Rama.jpg" width="200%" height="width">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Anvita Sree Bhogadi</h2>
+            <p class="lead">Vice-Chairperson</p>
+            <br>
+            <p class="lead">
+              Anvita Bhogadi is a grade 12 student at Delhi Public School Hyderabad. A writer by circumstance and a political enthusiast by choice, she’s a student researcher at the University of Hyderabad, who looks forward to studying economics, global relations, and healthcare in college. She loves to unwind by overanalyzing film and media, reading Taylor Jenkins Reid, and engaging in philosophical discussions. She is passionate about social entrepreneurship and runs a venture focused on the dissemination of Model UN as well as debate and speech skills. She looks forward to attending the conference as part of this vibrant Executive Board for UNCND!
+            </p>
+          </div>
+          <div class="col-md-3">
+            <img src="./Images/Anvitha Bhogadi.jpg" width="200%" height="width">
+          </div>
+        </div>
+        <br><br><br><br><br>
+
+      </div>
+      <!-- End of EB Show-show -->
+
+    </main>
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+
+    <!-- Script for searchbar. -->
+    <script>
+      document.getElementById("searchbox").oninput = () => {search()}
+      function search(){
+        let options = document.getElementById("options").children
+        let search_param = document.getElementById("searchbox").value
+        for (var i = 0; i <= Array.from(options).length - 1;i++){
+          if (options[i].children[0].innerText.toLowerCase().includes(search_param.toLowerCase())){
+            options[i].style.display = "block"
+          }else{
+            options[i].style.display = "none"
+          }
+        }
+      }
+    </script>
+    <!-- End of Script for searchbar. -->
+
+    <div class="b-example-divider"></div>
+
+    <div class="container">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="./Secretariat.html" class="nav-link p-0 text-body-secondary">Secretariat</a></li>
+              <li class="nav-item mb-2"><a href="./resources.html" class="nav-link p-0 text-body-secondary">Resources and Schedule</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="./AIPPM.html" class="nav-link p-0 text-body-secondary">AIPPM</a></li>
+              <li class="nav-item mb-2"><a href="./ECOFIN.html" class="nav-link p-0 text-body-secondary">ECOFIN</a></li>
+              <li class="nav-item mb-2"><a href="./FCCC.html" class="nav-link p-0 text-body-secondary">FCCC</a></li>
+              <li class="nav-item mb-2"><a href="./IP.html" class="nav-link p-0 text-body-secondary">IP</a></li>
+              <li class="nav-item mb-2"><a href="./IPL.html" class="nav-link p-0 text-body-secondary">IPL</a></li>
+              <li class="nav-item mb-2"><a href="./Legal.html" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="./UNCND.html" class="nav-link p-0 text-body-secondary">UNCND</a></li>
+              <li class="nav-item mb-2"><a href="./UNHRC.html" class="nav-link p-0 text-body-secondary">UNHRC</a></li>
+              <li class="nav-item mb-2"><a href="./UNSC.html" class="nav-link p-0 text-body-secondary">UNSC</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-10">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-10">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-30">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+              <p>Official DPSHMUN email ID:  dpshydmun@dpshyderabad.com</p>
+              <p>Siddharth Gumma (Under-Secretary-General Delegate Affairs): +91 96186 98811</p>
+              <p>Rujula Yanamandra (Under-Secretary-General Policy): +91 80086 11146</p>        
+            </ul>
+          </div>      
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; DPSHMUN 2024, Created by the Tech Team</p>
+        </div>
+      </footer>
+    </div>
+
+    </body>
+
+</html>

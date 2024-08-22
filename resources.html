@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - DPSHMUN 2024</title>
+    <script src="./JS/color-modes.js"></script>
+    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .😑{
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: block;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+        .initial-animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 9998;
+            background: var(--background-color);
+            color: var(--text-color);
+            transition: opacity 1s ease-out;
+        }
+
+        .initial-animation-container.hidden {
+    opacity: 0; /* Fade out */
+    transition: opacity 1s ease-out; /* Smooth transition */
+}
+
+        .initial-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 2em;
+            opacity: 0;
+        }
+
+        .initial-text .subtext {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100vw;
+            background: var(--hero-background);
+            margin-top: 0;
+            padding-top: 120px;
+            padding-bottom: 60px;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/resourceHero.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: 0;
+        }
+
+        .hero-content h1 {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #footer-container {
+            margin-top: 45px;
+            border-radius: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            background-color: var(--section-bg);
+            display: none;
+        }
+
+        @keyframes initialTextPopUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 1; }
+        }
+
+        [data-bs-theme="light"] {
+            --background-color: #f8f9fa;
+            --text-color: #000;
+            --hero-background: #f8f9fa; /* Light background for hero section */
+            --section-bg: #fff; /* Light background for sections */
+            --page-bg-color: #f8f9fa; /* Light background for page */
+            --video-item-bg-color: #f1f1f1;
+        }
+
+        [data-bs-theme="dark"] {
+            --background-color: #2b3035;
+            --text-color: #fff;
+            --hero-background: #333; /* Dark background for hero section */
+            --section-bg: #2b3035; /* Dark background for sections */
+            --page-bg-color: #212529; /* Dark background for page */
+            --video-item-bg-color: #383f45;
+        }
+
+        #navbar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 9999;
+        }
+
+        .resources-container {
+            display: flex;
+            flex-direction: column; /* For stacking */
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: var(--section-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            min-width: 50%;
+        }
+
+        .resource-image {
+            max-width: 30%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+
+        .resource-content {
+            flex: 1;
+        }
+
+        .resource-content h2 {
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .resource-content p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .resource-content a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 1em;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .resource-content a:hover {
+            background-color: #0056b3;
+        }
+
+        @media (min-width: 768px) {
+            .resources-container {
+                flex-direction: row;
+            }
+        }
+
+        .background-guide-section {
+            background-color: var(--section-bg);
+            padding: 40px 20px;
+            margin-top: 2rem, 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        .background-guide-section h2 {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .background-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1;}
+            100% { opacity: 0; }
+        }
+
+        .background-guide-item {
+    position: relative;
+    background-color: var(--section-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    height: 0;
+    padding-top: 45%; /* Aspect ratio */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Ensure container scales with image */
+}
+
+.background-guide-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+}
+
+.background-guide-item:hover {
+    transform: scale(1.025);
+}
+
+
+        .background-guide-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .intro-videos-section {
+            padding: 60px 20px;
+            background-color: var(--section-bg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem, 0;
+            border-radius: 20px;
+        }
+
+        .intro-videos-section h2 {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .video-item {
+            background-color: var(--video-item-bg-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-item:hover {
+            transform: scale(1.025);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-thumbnail {
+            position:relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+            border: none !important;
+        }
+
+        .video-thumbnail iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none !important;
+        }
+
+        .video-details {
+            padding: 15px;
+        }
+
+        .video-details h3 {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+
+        .video-details p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 1em;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .presentation-section {
+            background-color: var(--section-bg);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .presentation-content iframe {
+            width: 100%;
+            height: 60vw;
+            max-height: 30rem;
+        }
+
+        .presentation-image iframe {
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .presentation-details {
+            flex: 1;
+        }
+
+        .presentation-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .presentation-section p {
+            color: var(--text-color);
+        }
+
+        .presentation-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .presentation-view-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .presentation-view-btn:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+
+<body style="background-color: var(--page-bg-color);">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+          <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+          <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+          <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </symbol>
+      </svg>
+      <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+                id="bd-theme"
+                type="button"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-label="Toggle theme (auto)">
+          <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+              <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+              Light
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+              <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+              Dark
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+              <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+              Auto
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <img class="logo" src="./Images/logo.png"
+                width="50"
+                Height="45"/>
+            <a class="navbar-brand">DPSHMUN 2024</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./Secretariat.html">Secretariat</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Committees</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./AIPPM.html">AIPPM</a></li>
+                    <li><a class="dropdown-item" href="./ECOFIN.html">ECOFIN</a></li>
+                    <li><a class="dropdown-item" href="./FCCC.html">FCCC</a></li>
+                    <li><a class="dropdown-item" href="./IP.html">IP</a></li>
+                    <li><a class="dropdown-item" href="./IPL.html">IPL</a></li>
+                    <li><a class="dropdown-item" href="./Legal.html">Legal</a></li>
+                    <li><a class="dropdown-item" href="./UNCND.html">UNCND</a></li>
+                    <li><a class="dropdown-item" href="./UNHRC.html">UNHRC</a></li>
+                    <li><a class="dropdown-item" href="./UNSC.html">UNSC</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./resources.html">Resources and Schedule</a>
+                </li>
+              </ul>
+              <div class="dropdown dropstart">
+              <button class="btn btn-outline-success dropdown-toggle dropdown-menu-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Search
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" >
+                <div class="input-group mb-3 rounded-0">
+                  <input type="text" id="searchbox" class="form-control rounded-0" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                </div>
+                <div id="options">
+                  <li class="dropdown-item"><a href="./index.html" class="😑">Home</a></li>
+                  <li class="dropdown-item"><a href="./Secretariat.html" class="😑">Secretariat</a></li>
+                  <li class="dropdown-item"><a href="./AIPPM.html" class="😑">AIPPM</a></li>
+                  <li class="dropdown-item"><a href="./ECOFIN.html" class="😑">ECOFIN</a></li>
+                  <li class="dropdown-item"><a href="./FCCC.html" class="😑">FCCC</a></li>
+                  <li class="dropdown-item"><a href="./IP.html" class="😑">IP</a></li>
+                  <li class="dropdown-item"><a href="./IPL.html" class="😑">IPL</a></li>
+                  <li class="dropdown-item"><a href="./Legal.html" class="😑">Legal</a></li>
+                  <li class="dropdown-item"><a href="./UNCND.html" class="😑">UNCND</a></li>
+                  <li class="dropdown-item"><a href="./UNHRC.html" class="😑">UNHRC</a></li>
+                  <li class="dropdown-item"><a href="./UNSC.html" class="😑">UNSC</a></li>
+                  <li class="dropdown-item"><a href="./resources.html" class="😑">Resources and Schedule</a></li>
+                </div>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <div class="initial-animation-container">
+        <div class="initial-text">
+            <div>Your ultimate guide.</div>
+            <div class="subtext">The MUN Delegate Resource Hub</div>
+        </div>
+    </div>
+
+    <div class="hero-section mt-5">
+        <div class="hero-background"></div>
+        <div class="hero-content-wrapper">
+            <div class="hero-content">
+                <h1>Resources</h1>
+            </div>
+        </div>
+        </div>
+    
+        <div class="resources-container">
+            <div class="resource-item">
+                <img src="Images/handbookImage.jpg" alt="Delegate Handbook" class="resource-image">
+                <div class="resource-content">
+                    <h2>Delegate Handbook</h2>
+                    <p>Explore the essential guide for MUN delegates.</p>
+                    <a href="./PDF/Final Delegate Handbook.pdf" target="_blank">View</a>
+                </div>
+            </div>
+            <div class="resource-item">
+                <img src="Images/Itinerary.jpg" alt="Schedule" class="resource-image">
+                <div class="resource-content">
+                    <h2>Schedule</h2>
+                    <p>Check out the schedule for MUN events and sessions.</p>
+                    <a href="./PDF/Itinerary.pdf" target="_blank">View</a>
+                </div>
+            </div>
+        </div>
+    
+        <div id="bgguide" class="background-guide-section">
+            <h2><b>Background Guides</b></h2>
+            <div class="background-guide-grid">
+                <div class="background-guide-item">
+                    <a href="./PDF/UNHRC (BG).pdf">
+                        <img src="Images/1.png" alt="UNHRC">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/AIPPM (BG).pdf">
+                        <img src="Images/2.png" alt="AIPPM">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/ECOFIN (BG).pdf">
+                        <img src="Images/3.png" alt="ECOFIN">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/UNSC (BG).pdf">
+                        <img src="Images/4.png" alt="UNSC">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/IPL (BG).pdf">
+                        <img src="Images/5.png" alt="IPL">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/UNCND (BG).pdf">
+                        <img src="Images/6.png" alt="UNCND">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/FCCC (BG).pdf">
+                        <img src="Images/7.png" alt="FCCC">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/IP (BG).pdf">
+                        <img src="Images/8.png" alt="IP">
+                    </a>
+                </div>
+                <div class="background-guide-item">
+                    <a href="./PDF/Legal (BG).pdf">
+                        <img src="Images/9.jpg" alt="Legal">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="presentation-section">
+            <div class="presentation-content row">
+                <div class="presentation-image col-md-7">
+                    <iframe src="https://onedrive.live.com/embed?resid=9A9B1D93D0C18A78%21108&amp;authkey=%21AOZG5_yrDM8cWws&amp;em=2&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                </div>
+                <div class="presentation-details col-md-7 align-self-center mt-4">
+                    <h3>Introduction to DPSHMUN</h3>
+                     <a href="Resources Content/MUN_PPT.pdf" class="presentation-view-btn"  target="_blank" download>Download</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="intro-videos-section">
+            <h2><b>Introductory Videos</b></h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/xZGhU6P3Dcc" title="Introduction to MUN" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3>What is Model United Nations?</h3>
+                        <p>An overview of Model United Nations and its significance.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/RPOFlQfwWVE" title="MUN Delegate Tips" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3>Participating in a MUN</h3>
+                        <p>Key strategies and tips for effective MUN participation.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/DQqOWmVSasE" title="How to Research for MUN" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3>Flow of Debate</h3>
+                        <p>Structure and progression of debates in MUN sessions.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/7sQQAKghwhs" title="Public Speaking Skills" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3>Points and Motions</h3>
+                        <p>Overview of points and motions used in MUN debates.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/ukocFZ2MyDI" title="MUN Procedures" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3>How to Research</h3>
+                        <p>Methods for researching and preparing for MUN conferences.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/8NwN1NiIDdI" title="Advanced MUN Strategies" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3>Moderated Caucuses</h3>
+                        <p>How to participate effectively in moderated caucuses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              <img width="100" height="100" src="./Images/logo.png">
+              <h1 class="text-body-emphasis">Visit the previous years' DPSHMUN Websites!</h1>
+              <br><br>
+              <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://dpshmun.vercel.app/"><button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                  Visit the 2023 DPSHMUN Website
+                </button></a>
+                <a href="https://dpshmun.netlify.app/"><button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                    Visit the 2022 DPSHMUN Website
+                  </button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="b-example-divider"></div>
+
+        <div class="container">
+            <footer class="py-5">
+              <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="./Secretariat.html" class="nav-link p-0 text-body-secondary">Secretariat</a></li>
+                    <li class="nav-item mb-2"><a href="./resources.html" class="nav-link p-0 text-body-secondary">Resources and Schedule</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-2 mb-3">
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="./AIPPM.html" class="nav-link p-0 text-body-secondary">AIPPM</a></li>
+                    <li class="nav-item mb-2"><a href="./ECOFIN.html" class="nav-link p-0 text-body-secondary">ECOFIN</a></li>
+                    <li class="nav-item mb-2"><a href="./FCCC.html" class="nav-link p-0 text-body-secondary">FCCC</a></li>
+                    <li class="nav-item mb-2"><a href="./IP.html" class="nav-link p-0 text-body-secondary">IP</a></li>
+                    <li class="nav-item mb-2"><a href="./IPL.html" class="nav-link p-0 text-body-secondary">IPL</a></li>
+                    <li class="nav-item mb-2"><a href="./Legal.html" class="nav-link p-0 text-body-secondary">Legal</a></li>
+                    <li class="nav-item mb-2"><a href="./UNCND.html" class="nav-link p-0 text-body-secondary">UNCND</a></li>
+                    <li class="nav-item mb-2"><a href="./UNHRC.html" class="nav-link p-0 text-body-secondary">UNHRC</a></li>
+                    <li class="nav-item mb-2"><a href="./UNSC.html" class="nav-link p-0 text-body-secondary">UNSC</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-2 mb-10">
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-2 mb-10">
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-2 mb-30">
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+                    <p>Official DPSHMUN email ID:  dpshydmun@dpshyderabad.com</p>
+                    <p>Siddharth Gumma (Under-Secretary-General Delegate Affairs): +91 96186 98811</p>
+                    <p>Rujula Yanamandra (Under-Secretary-General Policy): +91 80086 11146</p>        
+                  </ul>
+                </div>      
+      
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>&copy; DPSHMUN 2024, Created by the Tech Team</p>
+              </div>
+            </footer>
+          </div>
+    
+        <script src="./JS/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                    const initialText = document.querySelector('.initial-text');
+                    const initialAnimationContainer = document.querySelector('.initial-animation-container');
+                    const heroSection = document.querySelector('.hero-section');
+        
+                    async function triggerAnimations() {
+                        initialText.style.animation = 'initialTextPopUp 1.5s ease-in-out forwards';
+                        await wait(1500);
+                            initialAnimationContainer.style.animation = 'fadeOut 1s forwards';
+                            heroSection.style.animation = 'fadeIn 1.5s forwards';
+                        await wait(1000)
+                                initialAnimationContainer.style.visibility = 'hidden';
+                                initialAnimationContainer.style.opacity = '0';
+                    }
+
+                    function wait(time) {
+                        return new Promise(resolve => {
+                            setTimeout(resolve, time);
+                        })
+                    }
+        
+                    triggerAnimations();
+            });
+        </script>
+        
+    </body>
+    </html>
+    

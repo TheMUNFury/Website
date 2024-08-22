@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./JS/color-modes.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .😑{
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="./CSS/carousel.css" rel="stylesheet">
+    <link href="./CSS/heroes.css" rel="stylesheet">
+
+  </head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages':['geochart'],
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var data = new google.visualization.arrayToDataTable([
+        ['Country', 'Tooltip'],
+        ['Egypt', 'Arab Republic of Egypt - Aru Sood'],
+        ['Venezuela', 'Bolivarian Republic of Venezuela - Chenna Akshith Reddy'],
+        ['Australia', 'Australia - Swayam Reddy'],
+        ['Dominican Republic', 'Dominican Republic - Sadhan Sanil'],
+        ['Canada', 'Canada - Naman Arora'],
+        ['Nepal', 'Nepal - Tanya Reddy'],
+        ['Germany', 'Federal Republic of Germany - Abhigyan Dev'],
+        ['France', 'French Republic - SHRAVAN BALAJI'],
+        ['Afghanistan', 'Islamic Republic of Afghanistan - Muppaneni Ujjwal N.S'],
+        ['Netherlands', 'Kingdom of Netherlands - Samriddhi Vijayvargiya'],
+        ['Kingdom of Bahrain', 'Kingdom of Bahrain - Venkata Aditya Sayam'],
+        ['Belgium', 'Kingdom of Belgium - Nirav Chennamaneni'],
+        ['Denmark', 'Kingdom of Denmark - Nihaal Reddy Guda'],
+        ['Saudi Arabia', 'Kingdom of Saudi Arabia - Swati Lanka'],
+        ['Sweden', 'Kingdom of Sweden - G. Kashvi Reddy'],
+        ['Algeria', 'People\'s Democratic Republic of Algeria - Anchal Agrawal'],
+        ['Bangladesh', 'People\'s Republic of Bangladesh - Pakanati Chethana Reddy'],
+        ['China', 'People\'s Republic of China - Maanya Rao'],
+        ['Armenia', 'Republic of Armenia - Kolan Shritha Reddy'],
+        ['Austria', 'Republic of Austria - Donthala Haasini'],
+        ['Azerbaijan', 'Republic of Azerbaijan - Kopal Gupta'],
+        ['Bulgaria', 'Republic of Bulgaria - Tanvi Agrawal'],
+        ['Chile', 'Republic of Chile - Divyanshi Gupta'],
+        ['Colombia', 'Republic of Colombia - Kalidindi Neeharika'],
+        ['Croatia', 'Republic of Croatia - Ruchitha.T'],
+        ['Finland', 'Republic of Finland - Aditya Sarkar'],
+        ['India', 'Republic of India - Akshara Gupta'],
+        ['Indonesia', 'Republic of Indonesia - Sahil Bery'],
+        ['Iran', 'Islamic Republic of Iran - Veda Thammannagari'],
+        ['Iraq', 'Republic of Iraq - Hasini Pammi'],
+        ['North Korea', 'Republic of Korea - Aishani Roychoudhury'],
+        ['Lebanon', 'Lebanese Republic - Mehak Anchalia'],
+        ['Poland', 'Republic of Poland - Y Ritisha Sree'],
+        ['Turkey', 'Republic of Türkiye - Akshara Boyapati'],
+        ['Russia', 'Russian Federation - Anishka Singh'],
+        ['Japan', 'Japan - Suzane Binu Cherian'],
+        ['Qatar', 'State of Qatar - Sumedh Reyansh Gopisetti'],
+        ['Oman', 'Sultanate of Oman - Abhyuday Srivastava'],
+        ['Switzerland', 'Swiss Confederation - Janga Sai Devija'],
+        ['Syria', 'Syrian Arab Republic - Suhani Varma'],
+        ['Ukraine', 'Ukraine - Aryamann Kumar'],
+        ['United Arab Emirates', 'United Arab Emirates - D Sri Vallabha'],
+        ['United Kingdom', 'United Kingdom of Great Britain and Northern Ireland - Dakshita Sanwaria'],
+        ['United States', 'United States of America - Sarabudla Aakarsh Reddy'],
+        ['Yemen', 'Republic of Yemen - H. Nythruv Aashrith'],
+        ['Pakistan', 'Islamic Republic of Pakistan - Aneesh Komaravelli'],
+        ['Ecuador', 'Republic of Ecuador - Vedika Gundelli'],
+        ['Somalia', 'Federal Republic of Somalia - Aarav Agrawal'],
+        ['Maldives', 'Republic of Maldives - Yellasiri Jahnavi'],
+        ['Myanmar', 'Republic of the Union of Myanmar - Muppidi Akshara']
+      ]);
+
+      var options = {
+      defaultColor: '#E3B541',
+      backgroundColor: '#212529',
+      legend: 'none',
+      height: 600,
+      width: 1000, 
+      datalessRegionColor: '#D0BEA8',
+      };
+
+      
+
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+      chart.draw(data, options);
+    }
+  </script>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <img class="logo" src="./Images/logo.png"
+            width="50"
+            Height="45"/>
+          <a class="navbar-brand">DPSHMUN 2024</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Secretariat.html">Secretariat</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Committees</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./AIPPM.html">AIPPM</a></li>
+                  <li><a class="dropdown-item" href="./ECOFIN.html">ECOFIN</a></li>
+                  <li><a class="dropdown-item" href="./FCCC.html">FCCC</a></li>
+                  <li><a class="dropdown-item" href="./IP.html">IP</a></li>
+                  <li><a class="dropdown-item" href="./IPL.html">IPL</a></li>
+                  <li><a class="dropdown-item" href="./Legal.html">Legal</a></li>
+                  <li><a class="dropdown-item" href="./UNCND.html">UNCND</a></li>
+                  <li><a class="dropdown-item" href="./UNHRC.html">UNHRC</a></li>
+                  <li><a class="dropdown-item" href="./UNSC.html">UNSC</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./resources.html">Resources and Schedule</a>
+              </li>
+            </ul>
+            <div class="dropdown dropstart">
+            <button class="btn btn-outline-success dropdown-toggle dropdown-menu-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Search
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" >
+              <div class="input-group mb-3 rounded-0">
+                <input type="text" id="searchbox" class="form-control rounded-0" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+              <div id="options">
+                <li class="dropdown-item"><a href="./index.html" class="😑">Home</a></li>
+                <li class="dropdown-item"><a href="./Secretariat.html" class="😑">Secretariat</a></li>
+                <li class="dropdown-item"><a href="./AIPPM.html" class="😑">AIPPM</a></li>
+                <li class="dropdown-item"><a href="./ECOFIN.html" class="😑">ECOFIN</a></li>
+                <li class="dropdown-item"><a href="./FCCC.html" class="😑">FCCC</a></li>
+                <li class="dropdown-item"><a href="./IP.html" class="😑">IP</a></li>
+                <li class="dropdown-item"><a href="./IPL.html" class="😑">IPL</a></li>
+                <li class="dropdown-item"><a href="./Legal.html" class="😑">Legal</a></li>
+                <li class="dropdown-item"><a href="./UNCND.html" class="😑">UNCND</a></li>
+                <li class="dropdown-item"><a href="./UNHRC.html" class="😑">UNHRC</a></li>
+                <li class="dropdown-item"><a href="./UNSC.html" class="😑">UNSC</a></li>
+                <li class="dropdown-item"><a href="./resources.html" class="😑">Resources and Schedule</a></li>
+              </div>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <img class="d-block mx-auto mb-4" src="./Images/3.png" alt="" width=100% height=width*3>
+
+    <div class="b-example-divider"></div>
+
+    <div class="container marketing">
+
+      <div class="row featurette">
+        <div class="container col-xxl-15 px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img src="./Images/6l.png" class="d-block mx-lg-auto img-fluid" width=60% height=width loading="lazy">
+            </div>
+            <div class="col-lg-6 ">
+              <h1 class="display-5 fw-bold text-body-emphasis mb-5">ECOFIN</h1>
+              <p class="lead">ECOFIN, is the second committee of the United Nations General Assembly.  This committee addresses issues related to economic growth, sustainable development, globalization and eradication of poverty. It discusses policies and solutions for various matters in the financial and economic sphere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+      <h1 class="text-body-emphasis">Agenda</h1>
+      <p class="lead">
+        Promotion of international cooperation to combat illicit financial flows and strengthen good practices on assets return to foster sustainable development.
+      </p>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold text-white">Background Guides</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="fs-5 mb-4">A Background Guide is an introductory document curated by the Executive Board. It briefs about matters related to the committee and its agenda. You can find all the Background Guides by using the button below.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="./resources.html#bgguide"><button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Background Guides</button></a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="b-example-divider"></div>
+        
+    <br><br><br>
+
+    <h1 align="center">Allocations</h1>
+    <br><br><br>
+
+    <div id="regions_div" style="width: 1500px; height: 700px;" align="center"></div>
+
+    <div class="b-example-divider"></div>
+            <!-- EB show -->
+            <main>  
+              <div class="container marketing">
+                <br><br><br>
+                <h1 align="center">Meet the Executive Board!</h1>
+                <br><br>
+                <div class="row featurette">
+                  <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">D. Sai Srikar</h2>
+                      <p class="lead">Chairperson</p>
+                      <br>
+                    <p class="lead">             
+                      Srikar is a Grade 12 student at Delhi Public School, Hyderabad. He wholeheartedly believes that attending several MUN conferences is not nearly as important as what you learn from them. Having found the debate in MUN conferences to be quite intriguing and sometimes even exciting, he wishes all the participants the best of luck in their research and hopes to see a fruitful debate at the conference.</p>
+                  </div>
+                  <div class="col">
+                    <img src="./Images/D Sai Srikar.jpg" width="100%" height="width">
+                  </div>
+                </div>
+        
+                <hr class="featurette-divider">
+        
+                <div class="row featurette">
+                  <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">B.V. Jatin Reddy</h2>
+                      <p class="lead">Co-Vice-Chairperson </p>
+                      <br>
+                    <p class="lead">             
+                      Jatin, a  student in grade 12 at Delhi Public School Hyderabad, he has a profound passion for Model United Nations (MUN) conferences. Known for his articulate speaking and sharp analytical skills, Jatin excels in debating global issues and representing various countries with diplomacy and poise. embodies a profound commitment to serving his community. With a keen sense of empathy and a compassionate heart, Jatin actively seeks opportunities to make a positive impact on society. Whether through organizing charity events, volunteering at local shelters, he tirelessly dedicates himself to uplifting those around him. Jatin's passion for social responsibility not only enriches the lives of others but also serves as an inspiration to his peers, fostering a culture of kindness and altruism within his school and beyond.
+                    </p>
+                  </div>
+                  <div class="col">
+                    <img src="./Images/Jatin Reddy.jpg" width="100%" height="width">
+                  </div>
+                </div>
+        
+                <hr class="featurette-divider">
+        
+                <div class="row featurette">
+                  <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Rishika Agrawal</h2>
+                      <p class="lead">Co-Vice-Chairperson </p>
+                      <br>
+                    <p class="lead">             
+                      Rishika Agrawal, a student at Delhi Public School Hyderabad, stands out with her active involvement in Model United Nations (MUNs), having participated in over 15 conferences. She's not just about academics; she's an incredible dancer and a huge fan of murder mystery novels. You can often find her sitting in a corner, sipping coffee, and getting lost in a good book. Rishika’s diverse interests show her knack for balancing education with personal growth, highlighting her dedication to understanding global issues and expressing her creativity. Her passion for learning and exploring different activities truly sets her apart.
+                    </p>
+                  </div>
+                  <div class="col">
+                    <img src="./Images/Rishika Agrawal .jpg" width="100%" height="width">
+                  </div>
+                </div>
+        
+                <br><br><br>
+        
+              </div>
+            <!-- End of EB Show-->
+
+            <div class="b-example-divider"></div>
+
+            <div class="container">
+              <footer class="py-5">
+                <div class="row">
+                  <div class="col-6 col-md-2 mb-3">
+                    <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+                      <li class="nav-item mb-2"><a href="./Secretariat.html" class="nav-link p-0 text-body-secondary">Secretariat</a></li>
+                      <li class="nav-item mb-2"><a href="./resources.html" class="nav-link p-0 text-body-secondary">Resources and Schedule</a></li>
+                    </ul>
+                  </div>
+        
+                  <div class="col-6 col-md-2 mb-3">
+                    <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="./AIPPM.html" class="nav-link p-0 text-body-secondary">AIPPM</a></li>
+                      <li class="nav-item mb-2"><a href="./ECOFIN.html" class="nav-link p-0 text-body-secondary">ECOFIN</a></li>
+                      <li class="nav-item mb-2"><a href="./FCCC.html" class="nav-link p-0 text-body-secondary">FCCC</a></li>
+                      <li class="nav-item mb-2"><a href="./IP.html" class="nav-link p-0 text-body-secondary">IP</a></li>
+                      <li class="nav-item mb-2"><a href="./IPL.html" class="nav-link p-0 text-body-secondary">IPL</a></li>
+                      <li class="nav-item mb-2"><a href="./Legal.html" class="nav-link p-0 text-body-secondary">Legal</a></li>
+                      <li class="nav-item mb-2"><a href="./UNCND.html" class="nav-link p-0 text-body-secondary">UNCND</a></li>
+                      <li class="nav-item mb-2"><a href="./UNHRC.html" class="nav-link p-0 text-body-secondary">UNHRC</a></li>
+                      <li class="nav-item mb-2"><a href="./UNSC.html" class="nav-link p-0 text-body-secondary">UNSC</a></li>
+                    </ul>
+                  </div>
+        
+                  <div class="col-6 col-md-2 mb-10">
+                    <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    </ul>
+                  </div>
+        
+                  <div class="col-6 col-md-2 mb-10">
+                    <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                    </ul>
+                  </div>
+        
+                  <div class="col-6 col-md-2 mb-30">
+                    <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+                      <p>Official DPSHMUN email ID:  dpshydmun@dpshyderabad.com</p>
+                      <p>Siddharth Gumma (Under-Secretary-General Delegate Affairs): +91 96186 98811</p>
+                      <p>Rujula Yanamandra (Under-Secretary-General Policy): +91 80086 11146</p>        
+                    </ul>
+                  </div>      
+        
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                  <p>&copy; DPSHMUN 2024, Created by the Tech Team</p>
+                </div>
+              </footer>
+            </div>
+
+    </main>
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+
+    <!-- Script for searchbar. -->
+    <script>
+      document.getElementById("searchbox").oninput = () => {search()}
+      function search(){
+        let options = document.getElementById("options").children
+        let search_param = document.getElementById("searchbox").value
+        for (var i = 0; i <= Array.from(options).length - 1;i++){
+          if (options[i].children[0].innerText.toLowerCase().includes(search_param.toLowerCase())){
+            options[i].style.display = "block"
+          }else{
+            options[i].style.display = "none"
+          }
+        }
+      }
+    </script>
+    <!-- End of Script for searchbar. -->
+    </body>
+
+</html>
